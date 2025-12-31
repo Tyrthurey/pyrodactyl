@@ -1,5 +1,8 @@
 import styled from 'styled-components';
 
+// NOTE: You can change the little gradient on the sidebar buttons
+// by modifying the background: linear-gradient(to right, rgba(250, 78, 73, 0.2), transparent);
+// You can also modify the button height (i.e. if you want them more compact or spread out) by touching up min-height and padding.
 const MainSidebar = styled.nav`
     width: 300px;
     flex-direction: column;
@@ -22,10 +25,10 @@ const MainSidebar = styled.nav`
         & > div {
             display: flex;
             position: relative;
-            padding: 16px 0;
+            padding: 8px 0;
             gap: 8px;
             font-weight: 600;
-            min-height: 56px;
+            min-height: 44px;
             -webkit-tap-highlight-color: transparent;
             user-select: none;
             user-drag: none;
@@ -37,6 +40,7 @@ const MainSidebar = styled.nav`
             &.active {
                 color: #fa4e49;
                 fill: #fa4e49;
+                background: linear-gradient(to left, rgba(250, 78, 73, 0.35), transparent);
             }
         }
     }

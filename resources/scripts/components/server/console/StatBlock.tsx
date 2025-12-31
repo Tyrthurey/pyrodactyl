@@ -2,8 +2,6 @@ import clsx from 'clsx';
 
 import CopyOnClick from '@/components/elements/CopyOnClick';
 
-import styles from './style.module.css';
-
 interface StatBlockProps {
     title: string;
     copyOnClick?: string;
@@ -21,12 +19,12 @@ const StatBlock = ({ title, copyOnClick, className, children }: StatBlockProps) 
                 )}
             >
                 <div className={'flex flex-col justify-center overflow-hidden w-full'}>
-                    <p className={'leading-tight text-xs text-zinc-400 mb-2 uppercase tracking-wide font-medium'}>
+                    <p className={'leading-tight text-[10px] text-zinc-400 mb-1 uppercase tracking-wide font-medium'}>
                         {title}
                     </p>
                     <div
                         className={
-                            'text-lg sm:text-xl font-bold leading-tight tracking-tight w-full truncate text-zinc-100 group-hover:text-white transition-colors duration-150'
+                            'text-base sm:text-lg font-bold leading-tight tracking-tight w-full truncate text-zinc-100 group-hover:text-white transition-colors duration-150'
                         }
                     >
                         {children}

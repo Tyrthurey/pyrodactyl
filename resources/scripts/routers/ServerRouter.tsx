@@ -145,7 +145,7 @@ const ServerRouter = () => {
     const calculateTop = (pathname: string): string | number => {
         if (!id) return '0';
 
-        const HighlightOffset = 8;
+        const HighlightOffset = 6;
 
         // Find matching route for the current pathname
         for (const route of navRoutes) {
@@ -181,11 +181,11 @@ const ServerRouter = () => {
 
     const top = calculateTop(location.pathname);
 
-    const [height, setHeight] = useState('40px');
+    const [height, setHeight] = useState('32px');
 
     useEffect(() => {
-        setHeight('34px');
-        const timeoutId = setTimeout(() => setHeight('40px'), 200);
+        setHeight('28px');
+        const timeoutId = setTimeout(() => setHeight('32px'), 200);
         return () => clearTimeout(timeoutId);
     }, [top]);
 
@@ -305,7 +305,7 @@ const ServerRouter = () => {
                             <div aria-hidden className='mt-8 mb-4 bg-[#ffffff33] min-h-[1px] w-6'></div>
                             {/* Highlight */}
                             <div
-                                className='absolute bg-brand w-[3px] h-10 left-0 rounded-full pointer-events-none'
+                                className='absolute bg-brand w-[3px] h-9 left-0 rounded-full pointer-events-none'
                                 style={{
                                     top: adjustedTop,
                                     height,
@@ -315,7 +315,7 @@ const ServerRouter = () => {
                                 }}
                             />
                             <div
-                                className='absolute bg-zinc-900 w-12 h-10 blur-2xl left-0 rounded-full pointer-events-none'
+                                className='absolute bg-zinc-900 w-12 h-9 blur-2xl left-0 rounded-full pointer-events-none'
                                 style={{
                                     top: adjustedTop,
                                     opacity: isHighlightVisible ? 0.5 : 0,
@@ -340,10 +340,10 @@ const ServerRouter = () => {
                                 ))}
                             </ul>
                             <div className='shrink-0'>
-                                <div aria-hidden className='mt-8 mb-4 bg-[#ffffff33] min-h-[1px] w-full'></div>
+                                <div aria-hidden className='mt-4 mb-2 bg-[#ffffff33] min-h-[1px] w-full'></div>
                                 <StatBlock
                                     title='server'
-                                    className='p-4 bg-[#ffffff09] border-[1px] border-[#ffffff11] shadow-xs rounded-xl text-center hover:cursor-default'
+                                    className='p-3 bg-[#ffffff09] border border-[#ffffff11] rounded-xl text-center'
                                 >
                                     {serverName}
                                 </StatBlock>
